@@ -1,5 +1,6 @@
 import React from 'react'
 import { useGlobalContext } from './context'
+import fetchMovies from './useFetch'
 import { Link } from 'react-router-dom'
 
 const url =
@@ -7,10 +8,12 @@ const url =
 
   const Movies = () => {
     const { movies, isLoading } = useGlobalContext()
-  
+
     if (isLoading) {
       return <div className='loading'></div>
     }
+
+
     return (
       <section className='movies'>
         {movies.map((movie) => {
@@ -29,6 +32,7 @@ const url =
           )
         })}
       </section>
+
     )
   }
 

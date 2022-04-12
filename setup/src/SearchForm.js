@@ -3,6 +3,7 @@ import { useGlobalContext } from './context'
 
 const SearchForm = () => {
   const {query, setQuery, error} = useGlobalContext() // getting data from context and setting it to variables
+  console.log("query in serchform " + query)
 
   return (
     <form className='search-form' onSubmit={(e) => e.preventDefault()}>

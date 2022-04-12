@@ -8,6 +8,9 @@ const AppProvider = ({ children }) => {
   const [query, setQuery] = useState('batman')
   const { isLoading, error, data: movies } = useFetch(`&s=${query}`)
 
+  
+  console.log("movie" + movies)
+
   return (
     <AppContext.Provider value={{ isLoading, error, movies, query, setQuery }}>
       {children}
